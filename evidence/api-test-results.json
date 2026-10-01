@@ -1,7 +1,7 @@
 {
   "application": "Student Project Tracker",
   "baseUrl": "http://127.0.0.1:8765",
-  "testedAt": "2026-10-01T07:24:11.553Z",
+  "testedAt": "2026-10-01T08:40:13.901Z",
   "summary": {
     "passed": 15,
     "total": 15,
@@ -17,6 +17,21 @@
       "passed": true,
       "response": {
         "items": [
+          {
+            "id": 5,
+            "code": "STU-53215",
+            "title": "dadwsawd",
+            "description": "sdwdas",
+            "status": "planning",
+            "start_date": null,
+            "end_date": null,
+            "advisor_id": 1,
+            "created_at": "2026-10-01 07:29:12",
+            "updated_at": "2026-10-01 07:29:12",
+            "advisor_name": "อ.กมลชนก ใจดี",
+            "member_count": 0,
+            "progress": null
+          },
           {
             "id": 4,
             "code": "STU-2026-004",
@@ -78,7 +93,7 @@
             "progress": 65
           }
         ],
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -169,16 +184,16 @@
       "actual": "HTTP 201",
       "passed": true,
       "response": {
-        "id": 5,
-        "code": "SMOKE-MUP7KKFD",
+        "id": 6,
+        "code": "SMOKE-MUPAACQW",
         "title": "โครงงานทดสอบ API",
         "description": "ข้อมูลชั่วคราว",
         "status": "planning",
         "start_date": null,
         "end_date": null,
         "advisor_id": 1,
-        "created_at": "2026-10-01 07:24:11",
-        "updated_at": "2026-10-01 07:24:11",
+        "created_at": "2026-10-01 08:40:13",
+        "updated_at": "2026-10-01 08:40:13",
         "advisor_name": "อ.กมลชนก ใจดี",
         "member_count": 0,
         "progress": null,
@@ -189,21 +204,21 @@
     {
       "name": "GET project detail",
       "method": "GET",
-      "endpoint": "/api/projects/5",
+      "endpoint": "/api/projects/6",
       "expected": "HTTP 200",
       "actual": "HTTP 200",
       "passed": true,
       "response": {
-        "id": 5,
-        "code": "SMOKE-MUP7KKFD",
+        "id": 6,
+        "code": "SMOKE-MUPAACQW",
         "title": "โครงงานทดสอบ API",
         "description": "ข้อมูลชั่วคราว",
         "status": "planning",
         "start_date": null,
         "end_date": null,
         "advisor_id": 1,
-        "created_at": "2026-10-01 07:24:11",
-        "updated_at": "2026-10-01 07:24:11",
+        "created_at": "2026-10-01 08:40:13",
+        "updated_at": "2026-10-01 08:40:13",
         "advisor_name": "อ.กมลชนก ใจดี",
         "member_count": 0,
         "progress": null,
@@ -214,12 +229,12 @@
     {
       "name": "GET members for new project",
       "method": "GET",
-      "endpoint": "/api/projects/5/members",
+      "endpoint": "/api/projects/6/members",
       "expected": "HTTP 200",
       "actual": "HTTP 200",
       "passed": true,
       "response": {
-        "projectId": 5,
+        "projectId": 6,
         "items": [],
         "count": 0
       }
@@ -227,36 +242,36 @@
     {
       "name": "POST progress update",
       "method": "POST",
-      "endpoint": "/api/projects/5/progress",
+      "endpoint": "/api/projects/6/progress",
       "expected": "HTTP 201",
       "actual": "HTTP 201",
       "passed": true,
       "response": {
         "id": 5,
-        "project_id": 5,
+        "project_id": 6,
         "title": "ผลทดสอบ API",
         "detail": "เพิ่มความก้าวหน้าชั่วคราว",
         "percent_complete": 20,
-        "recorded_at": "2026-10-01 07:24:11",
+        "recorded_at": "2026-10-01 08:40:13",
         "created_by": 1
       }
     },
     {
       "name": "GET progress history",
       "method": "GET",
-      "endpoint": "/api/projects/5/progress",
+      "endpoint": "/api/projects/6/progress",
       "expected": "HTTP 200",
       "actual": "HTTP 200",
       "passed": true,
       "response": {
-        "projectId": 5,
+        "projectId": 6,
         "items": [
           {
             "id": 5,
             "title": "ผลทดสอบ API",
             "detail": "เพิ่มความก้าวหน้าชั่วคราว",
             "percent_complete": 20,
-            "recorded_at": "2026-10-01 07:24:11",
+            "recorded_at": "2026-10-01 08:40:13",
             "created_by": 1,
             "created_by_name": "กานต์ธีรา พูนผล"
           }
@@ -267,21 +282,21 @@
     {
       "name": "PUT update project",
       "method": "PUT",
-      "endpoint": "/api/projects/5",
+      "endpoint": "/api/projects/6",
       "expected": "HTTP 200",
       "actual": "HTTP 200",
       "passed": true,
       "response": {
-        "id": 5,
-        "code": "SMOKE-MUP7KKFD",
+        "id": 6,
+        "code": "SMOKE-MUPAACQW",
         "title": "โครงงานทดสอบ API (แก้ไข)",
         "description": "ยืนยันการแก้ไข",
         "status": "in_progress",
         "start_date": null,
         "end_date": null,
         "advisor_id": 1,
-        "created_at": "2026-10-01 07:24:11",
-        "updated_at": "2026-10-01 07:24:11",
+        "created_at": "2026-10-01 08:40:13",
+        "updated_at": "2026-10-01 08:40:13",
         "advisor_name": "อ.กมลชนก ใจดี",
         "member_count": 0,
         "progress": 20,
@@ -292,7 +307,7 @@
             "title": "ผลทดสอบ API",
             "detail": "เพิ่มความก้าวหน้าชั่วคราว",
             "percent_complete": 20,
-            "recorded_at": "2026-10-01 07:24:11",
+            "recorded_at": "2026-10-01 08:40:13",
             "created_by_name": "กานต์ธีรา พูนผล"
           }
         ]
@@ -301,13 +316,13 @@
     {
       "name": "DELETE test project",
       "method": "DELETE",
-      "endpoint": "/api/projects/5",
+      "endpoint": "/api/projects/6",
       "expected": "HTTP 200",
       "actual": "HTTP 200",
       "passed": true,
       "response": {
         "deleted": true,
-        "id": 5
+        "id": 6
       }
     },
     {
@@ -344,7 +359,7 @@
       "response": {
         "status": "ok",
         "database": "connected",
-        "projectCount": 4
+        "projectCount": 5
       }
     },
     {
