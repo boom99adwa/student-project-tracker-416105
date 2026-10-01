@@ -1,0 +1,14 @@
+{
+  "name": "student-project-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A small Thai project management system for the 416105 practical assignment.",
+  "scripts": {
+    "start": "node src/server.js",
+    "test:api": "node scripts/api-smoke.mjs && node scripts/render-test-report.mjs"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c3a">
+  <title>ทดสอบ API · Project Hub</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/api-tests.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Project Hub หน้าหลัก"><span class="brand-mark" aria-hidden="true">P</span><span><strong>Project Hub</strong><small>ระบบจัดการโครงงาน</small></span></a>
+      <p class="nav-label">เมนูหลัก</p>
+      <nav class="side-nav" aria-label="เมนูหลัก"><a class="nav-item" href="/"><span class="nav-icon" aria-hidden="true">▦</span>ภาพรวม</a><a class="nav-item active" href="/api-tests" aria-current="page"><span class="nav-icon" aria-hidden="true">⌘</span>ทดสอบ API</a></nav>
+      <div class="sidebar-note"><span class="note-dot" aria-hidden="true"></span><div><strong>ฐานข้อมูล SQLite</strong><small id="db-status">กำลังเชื่อมต่อ…</small></div></div>
+      <div class="sidebar-foot">416105 · Web &amp; Platform</div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><div><p class="eyebrow">พื้นที่ทำงาน / หลักฐานการทดสอบ</p><h1>ทดสอบ REST API</h1></div><div class="topbar-right"><a class="today-pill" href="/">← กลับหน้าภาพรวม</a></div></header>
+      <section class="api-page-intro"><h2>ตรวจสอบการทำงานของ API</h2><p>ทดสอบ CRUD และตรวจคำขอที่ไม่ถูกต้องกับเซิร์ฟเวอร์และฐานข้อมูลที่กำลังทำงาน</p></section>
+      <section class="panel api-test-panel">
+        <div class="panel-heading"><div><h2>ชุดทดสอบโครงงาน</h2><p>เรียก API จริงจากหน้าเว็บนี้ · ข้อมูลทดสอบจะถูกลบหลังจบชุดทดสอบ</p></div><span class="form-step">API</span></div>
+        <div class="test-controls"><div class="test-note">6 กรณี · GET · POST · PUT · DELETE · Invalid Request</div><button id="run-tests" class="button button-primary" type="button">▶ เริ่มทดสอบ API</button></div>
+        <div id="test-summary" class="test-summary" role="status" aria-live="polite"><strong>พร้อมทดสอบ</strong><span>กดปุ่มเพื่อยิงคำขอไปยัง API ในเครื่อง</span></div>
+        <div class="results-wrap"><table class="results-table"><thead><tr><th>กรณีทดสอบ</th><th>คำขอ</th><th>ผลที่คาดหวัง</th><th>ผลที่ได้</th><th>สถานะ</th></tr></thead><tbody id="test-results"><tr><td colspan="5" class="response-cell">ยังไม่ได้เริ่มทดสอบ</td></tr></tbody></table></div>
+        <p class="footer-small">คำขอทดสอบใช้รหัสโครงงานชั่วคราวและลบข้อมูลหลังทดสอบ เพื่อไม่ให้ข้อมูลตัวอย่างเปลี่ยนแปลง</p>
+      </section>
+      <footer class="page-footer"><span>Project Hub · หลักฐานการทดสอบ API</span><a href="/">กลับหน้าหลัก <span aria-hidden="true">↗</span></a></footer>
+    </main>
+  </div>
+</body>
+</html>

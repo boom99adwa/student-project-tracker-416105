@@ -1,0 +1,412 @@
+{
+  "application": "Student Project Tracker",
+  "baseUrl": "http://127.0.0.1:8765",
+  "testedAt": "2026-10-01T07:18:13.750Z",
+  "summary": {
+    "passed": 15,
+    "total": 15,
+    "successful": true
+  },
+  "results": [
+    {
+      "name": "GET project list",
+      "method": "GET",
+      "endpoint": "/api/projects",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": {
+        "items": [
+          {
+            "id": 4,
+            "code": "STU-2026-004",
+            "title": "ระบบจัดการกิจกรรมชมรม",
+            "description": "จัดการปฏิทินกิจกรรม การลงทะเบียน และรายชื่อผู้เข้าร่วม",
+            "status": "on_hold",
+            "start_date": "2026-09-15",
+            "end_date": "2027-01-15",
+            "advisor_id": 2,
+            "created_at": "2026-10-01 07:08:47",
+            "updated_at": "2026-10-01 07:08:47",
+            "advisor_name": "อ.ธนกฤต วัฒนะ",
+            "member_count": 3,
+            "progress": 10
+          },
+          {
+            "id": 3,
+            "code": "STU-2026-003",
+            "title": "แพลตฟอร์มแลกเปลี่ยนอุปกรณ์เรียน",
+            "description": "ช่วยให้นักศึกษาลงประกาศและค้นหาอุปกรณ์การเรียนที่ต้องการแลกเปลี่ยน",
+            "status": "completed",
+            "start_date": "2026-08-01",
+            "end_date": "2026-10-01",
+            "advisor_id": 1,
+            "created_at": "2026-10-01 07:08:47",
+            "updated_at": "2026-10-01 07:08:47",
+            "advisor_name": "อ.กมลชนก ใจดี",
+            "member_count": 3,
+            "progress": 100
+          },
+          {
+            "id": 2,
+            "code": "STU-2026-002",
+            "title": "ระบบติดตามงานสหกิจศึกษา",
+            "description": "จัดเก็บสถานประกอบการ แผนงาน และบันทึกความก้าวหน้ารายสัปดาห์",
+            "status": "planning",
+            "start_date": "2026-09-08",
+            "end_date": "2026-12-20",
+            "advisor_id": 2,
+            "created_at": "2026-10-01 07:08:47",
+            "updated_at": "2026-10-01 07:08:47",
+            "advisor_name": "อ.ธนกฤต วัฒนะ",
+            "member_count": 4,
+            "progress": 25
+          },
+          {
+            "id": 1,
+            "code": "STU-2026-001",
+            "title": "ระบบจองห้องปฏิบัติการ",
+            "description": "เว็บสำหรับค้นหาและจองช่วงเวลาใช้ห้องปฏิบัติการ พร้อมติดตามสถานะคำขอ",
+            "status": "in_progress",
+            "start_date": "2026-09-01",
+            "end_date": "2026-12-15",
+            "advisor_id": 1,
+            "created_at": "2026-10-01 07:08:47",
+            "updated_at": "2026-10-01 07:08:47",
+            "advisor_name": "อ.กมลชนก ใจดี",
+            "member_count": 3,
+            "progress": 65
+          }
+        ],
+        "count": 4
+      }
+    },
+    {
+      "name": "GET advisors",
+      "method": "GET",
+      "endpoint": "/api/advisors",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": [
+        {
+          "id": 1,
+          "name": "อ.กมลชนก ใจดี",
+          "email": "kamonchanok@example.test",
+          "department": "เทคโนโลยีสารสนเทศ"
+        },
+        {
+          "id": 2,
+          "name": "อ.ธนกฤต วัฒนะ",
+          "email": "thanakrit@example.test",
+          "department": "วิทยาการคอมพิวเตอร์"
+        }
+      ]
+    },
+    {
+      "name": "GET students",
+      "method": "GET",
+      "endpoint": "/api/students",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": [
+        {
+          "id": 1,
+          "student_no": "66010001",
+          "name": "กานต์ธีรา พูนผล",
+          "email": "student01@example.test",
+          "program": "เทคโนโลยีสารสนเทศ",
+          "year_level": 3
+        },
+        {
+          "id": 2,
+          "student_no": "66010002",
+          "name": "ณัฐวุฒิ ศรีสุข",
+          "email": "student02@example.test",
+          "program": "เทคโนโลยีสารสนเทศ",
+          "year_level": 3
+        },
+        {
+          "id": 3,
+          "student_no": "66010003",
+          "name": "พิมพ์ชนก สายใจ",
+          "email": "student03@example.test",
+          "program": "วิทยาการคอมพิวเตอร์",
+          "year_level": 3
+        },
+        {
+          "id": 4,
+          "student_no": "66010004",
+          "name": "ธนภัทร แสงทอง",
+          "email": "student04@example.test",
+          "program": "เทคโนโลยีสารสนเทศ",
+          "year_level": 3
+        },
+        {
+          "id": 5,
+          "student_no": "66010005",
+          "name": "ปาริชาติ นาคแก้ว",
+          "email": "student05@example.test",
+          "program": "วิทยาการคอมพิวเตอร์",
+          "year_level": 3
+        },
+        {
+          "id": 6,
+          "student_no": "66010006",
+          "name": "ศุภกร จันทร์ดี",
+          "email": "student06@example.test",
+          "program": "เทคโนโลยีสารสนเทศ",
+          "year_level": 3
+        }
+      ]
+    },
+    {
+      "name": "POST create project",
+      "method": "POST",
+      "endpoint": "/api/projects",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "passed": true,
+      "response": {
+        "id": 5,
+        "code": "SMOKE-MUP7CWCH",
+        "title": "โครงงานทดสอบ API",
+        "description": "ข้อมูลชั่วคราว",
+        "status": "planning",
+        "start_date": null,
+        "end_date": null,
+        "advisor_id": 1,
+        "created_at": "2026-10-01 07:18:13",
+        "updated_at": "2026-10-01 07:18:13",
+        "advisor_name": "อ.กมลชนก ใจดี",
+        "member_count": 0,
+        "progress": null,
+        "members": [],
+        "progress_updates": []
+      }
+    },
+    {
+      "name": "GET project detail",
+      "method": "GET",
+      "endpoint": "/api/projects/5",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": {
+        "id": 5,
+        "code": "SMOKE-MUP7CWCH",
+        "title": "โครงงานทดสอบ API",
+        "description": "ข้อมูลชั่วคราว",
+        "status": "planning",
+        "start_date": null,
+        "end_date": null,
+        "advisor_id": 1,
+        "created_at": "2026-10-01 07:18:13",
+        "updated_at": "2026-10-01 07:18:13",
+        "advisor_name": "อ.กมลชนก ใจดี",
+        "member_count": 0,
+        "progress": null,
+        "members": [],
+        "progress_updates": []
+      }
+    },
+    {
+      "name": "GET members for new project",
+      "method": "GET",
+      "endpoint": "/api/projects/5/members",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": {
+        "projectId": 5,
+        "items": [],
+        "count": 0
+      }
+    },
+    {
+      "name": "POST progress update",
+      "method": "POST",
+      "endpoint": "/api/projects/5/progress",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "passed": true,
+      "response": {
+        "id": 5,
+        "project_id": 5,
+        "title": "ผลทดสอบ API",
+        "detail": "เพิ่มความก้าวหน้าชั่วคราว",
+        "percent_complete": 20,
+        "recorded_at": "2026-10-01 07:18:13",
+        "created_by": 1
+      }
+    },
+    {
+      "name": "GET progress history",
+      "method": "GET",
+      "endpoint": "/api/projects/5/progress",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": {
+        "projectId": 5,
+        "items": [
+          {
+            "id": 5,
+            "title": "ผลทดสอบ API",
+            "detail": "เพิ่มความก้าวหน้าชั่วคราว",
+            "percent_complete": 20,
+            "recorded_at": "2026-10-01 07:18:13",
+            "created_by": 1,
+            "created_by_name": "กานต์ธีรา พูนผล"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "name": "PUT update project",
+      "method": "PUT",
+      "endpoint": "/api/projects/5",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": {
+        "id": 5,
+        "code": "SMOKE-MUP7CWCH",
+        "title": "โครงงานทดสอบ API (แก้ไข)",
+        "description": "ยืนยันการแก้ไข",
+        "status": "in_progress",
+        "start_date": null,
+        "end_date": null,
+        "advisor_id": 1,
+        "created_at": "2026-10-01 07:18:13",
+        "updated_at": "2026-10-01 07:18:13",
+        "advisor_name": "อ.กมลชนก ใจดี",
+        "member_count": 0,
+        "progress": 20,
+        "members": [],
+        "progress_updates": [
+          {
+            "id": 5,
+            "title": "ผลทดสอบ API",
+            "detail": "เพิ่มความก้าวหน้าชั่วคราว",
+            "percent_complete": 20,
+            "recorded_at": "2026-10-01 07:18:13",
+            "created_by_name": "กานต์ธีรา พูนผล"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DELETE test project",
+      "method": "DELETE",
+      "endpoint": "/api/projects/5",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": {
+        "deleted": true,
+        "id": 5
+      }
+    },
+    {
+      "name": "Reject missing required fields",
+      "method": "POST",
+      "endpoint": "/api/projects",
+      "expected": "HTTP 400",
+      "actual": "HTTP 400",
+      "passed": true,
+      "response": {
+        "error": "code is required.",
+        "field": "code"
+      }
+    },
+    {
+      "name": "Reject duplicate project code",
+      "method": "POST",
+      "endpoint": "/api/projects",
+      "expected": "HTTP 409",
+      "actual": "HTTP 409",
+      "passed": true,
+      "response": {
+        "error": "A project with this code already exists.",
+        "field": "code"
+      }
+    },
+    {
+      "name": "Database health check",
+      "method": "GET",
+      "endpoint": "/api/health",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": {
+        "status": "ok",
+        "database": "connected",
+        "projectCount": 4
+      }
+    },
+    {
+      "name": "List project members",
+      "method": "GET",
+      "endpoint": "/api/projects/1/members",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": {
+        "projectId": 1,
+        "items": [
+          {
+            "id": 1,
+            "student_no": "66010001",
+            "name": "กานต์ธีรา พูนผล",
+            "program": "เทคโนโลยีสารสนเทศ",
+            "role": "หัวหน้าทีม",
+            "joined_at": "2026-10-01"
+          },
+          {
+            "id": 2,
+            "student_no": "66010002",
+            "name": "ณัฐวุฒิ ศรีสุข",
+            "program": "เทคโนโลยีสารสนเทศ",
+            "role": "สมาชิก",
+            "joined_at": "2026-10-01"
+          },
+          {
+            "id": 3,
+            "student_no": "66010003",
+            "name": "พิมพ์ชนก สายใจ",
+            "program": "วิทยาการคอมพิวเตอร์",
+            "role": "สมาชิก",
+            "joined_at": "2026-10-01"
+          }
+        ],
+        "count": 3
+      }
+    },
+    {
+      "name": "List project progress",
+      "method": "GET",
+      "endpoint": "/api/projects/1/progress",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "passed": true,
+      "response": {
+        "projectId": 1,
+        "items": [
+          {
+            "id": 1,
+            "title": "ต้นแบบหน้าจอและ API",
+            "detail": "ทำหน้าแสดงรายการและเชื่อมต่อ API สำหรับดึงโครงงานแล้ว",
+            "percent_complete": 65,
+            "recorded_at": "2026-09-26 10:00:00",
+            "created_by": 1,
+            "created_by_name": "กานต์ธีรา พูนผล"
+          }
+        ],
+        "count": 1
+      }
+    }
+  ]
+}

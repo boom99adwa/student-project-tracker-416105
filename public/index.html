@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c3a">
+  <title>ระบบจัดการโครงงานนักศึกษา</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Project Hub หน้าหลัก">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span><strong>Project Hub</strong><small>ระบบจัดการโครงงาน</small></span>
+      </a>
+      <p class="nav-label">เมนูหลัก</p>
+      <nav class="side-nav" aria-label="เมนูหลัก">
+        <a class="nav-item active" href="/" aria-current="page"><span class="nav-icon" aria-hidden="true">▦</span>ภาพรวม</a>
+        <a class="nav-item" href="/api-tests"><span class="nav-icon" aria-hidden="true">⌘</span>ทดสอบ API</a>
+      </nav>
+      <div class="sidebar-note">
+        <span class="note-dot" aria-hidden="true"></span>
+        <div><strong>ฐานข้อมูล SQLite</strong><small id="db-status">กำลังเชื่อมต่อ…</small></div>
+      </div>
+      <div class="sidebar-foot">416105 · Web &amp; Platform</div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">พื้นที่ทำงาน / โครงงาน</p>
+          <h1>ภาพรวมโครงงาน</h1>
+        </div>
+        <div class="topbar-right">
+          <span class="today-pill"><span aria-hidden="true">◷</span><span id="today-label">วันนี้</span></span>
+          <div class="avatar" aria-label="ผู้ใช้ตัวอย่าง">ก</div>
+        </div>
+      </header>
+
+      <section class="welcome-row" aria-label="คำอธิบายระบบ">
+        <div><h2>ติดตามงานให้เห็นภาพรวม</h2><p>จัดการโครงงาน สมาชิก อาจารย์ที่ปรึกษา และความก้าวหน้าไว้ในที่เดียว</p></div>
+        <button class="button button-primary" id="new-project-button" type="button"><span aria-hidden="true">＋</span> เพิ่มโครงงาน</button>
+      </section>
+
+      <section class="stats-grid" aria-label="สรุปข้อมูล">
+        <article class="stat-card"><div class="stat-icon stat-blue" aria-hidden="true">▦</div><div><p>โครงงานทั้งหมด</p><strong id="stat-total">—</strong></div><span class="stat-caption">รายการในระบบ</span></article>
+        <article class="stat-card"><div class="stat-icon stat-teal" aria-hidden="true">◉</div><div><p>กำลังดำเนินการ</p><strong id="stat-active">—</strong></div><span class="stat-caption">รายการที่ยังทำอยู่</span></article>
+        <article class="stat-card"><div class="stat-icon stat-green" aria-hidden="true">✓</div><div><p>เสร็จสมบูรณ์</p><strong id="stat-completed">—</strong></div><span class="stat-caption">พร้อมส่งมอบ</span></article>
+        <article class="stat-card"><div class="stat-icon stat-orange" aria-hidden="true">♙</div><div><p>นักศึกษา</p><strong id="stat-students">—</strong></div><span class="stat-caption">สมาชิกในระบบ</span></article>
+      </section>
+
+      <section class="workspace-grid">
+        <div class="panel project-panel">
+          <div class="panel-heading">
+            <div><h2>รายการโครงงาน</h2><p id="project-count">กำลังโหลดข้อมูล…</p></div>
+            <div class="filter-row">
+              <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="ค้นหาชื่อหรือรหัส…" aria-label="ค้นหาโครงงาน"></label>
+              <label class="select-wrap"><span class="sr-only">กรองตามสถานะ</span><select id="status-filter"><option value="">ทุกสถานะ</option><option value="planning">วางแผน</option><option value="in_progress">กำลังทำ</option><option value="completed">เสร็จแล้ว</option><option value="on_hold">พักไว้</option></select></label>
+            </div>
+          </div>
+          <div id="project-list" class="project-list" aria-live="polite" aria-busy="true"></div>
+          <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">⌕</span><strong>ไม่พบโครงงาน</strong><p>ลองเปลี่ยนคำค้นหาหรือตัวกรองสถานะ</p></div>
+        </div>
+
+        <aside class="panel form-panel" aria-labelledby="form-title">
+          <div class="panel-heading form-heading"><div><h2 id="form-title">เพิ่มโครงงานใหม่</h2><p>กรอกข้อมูลเบื้องต้นของโครงงาน</p></div><span class="form-step">01</span></div>
+          <form id="project-form">
+            <input id="project-id" type="hidden">
+            <label for="project-code">รหัสโครงงาน <span class="required">*</span></label>
+            <input id="project-code" name="code" maxlength="24" placeholder="เช่น STU-2026-005" required>
+            <label for="project-title">ชื่อโครงงาน <span class="required">*</span></label>
+            <input id="project-title" name="title" maxlength="120" placeholder="ระบุชื่อโครงงาน" required>
+            <label for="project-description">รายละเอียด</label>
+            <textarea id="project-description" name="description" rows="3" maxlength="1000" placeholder="เป้าหมายหรือขอบเขตโดยย่อ"></textarea>
+            <div class="form-two-col">
+              <div><label for="project-advisor">อาจารย์ที่ปรึกษา <span class="required">*</span></label><select id="project-advisor" name="advisorId" required></select></div>
+              <div><label for="project-status">สถานะ</label><select id="project-status" name="status"><option value="planning">วางแผน</option><option value="in_progress">กำลังทำ</option><option value="completed">เสร็จแล้ว</option><option value="on_hold">พักไว้</option></select></div>
+            </div>
+            <div class="form-two-col">
+              <div><label for="project-start">วันเริ่มต้น</label><input id="project-start" name="startDate" type="date"></div>
+              <div><label for="project-end">วันสิ้นสุด</label><input id="project-end" name="endDate" type="date"></div>
+            </div>
+            <div class="form-actions"><button id="cancel-edit" class="button button-light" type="button" hidden>ยกเลิก</button><button id="save-project" class="button button-primary button-full" type="submit">บันทึกโครงงาน <span aria-hidden="true">→</span></button></div>
+            <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </aside>
+      </section>
+      <footer class="page-footer"><span>Project Hub · ระบบจัดการข้อมูลโครงงานนักศึกษา</span><a href="/api-tests">เปิดหน้าทดสอบ API <span aria-hidden="true">↗</span></a></footer>
+    </main>
+  </div>
+</body>
+</html>

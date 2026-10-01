@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+  <title id="title">ER Diagram: ระบบจัดการโครงงานนักศึกษา</title>
+  <desc id="desc">นักศึกษาหลายคนเป็นสมาชิกหลายโครงงาน อาจารย์หนึ่งคนดูแลหลายโครงงาน และโครงงานหนึ่งมีบันทึกความก้าวหน้าได้หลายรายการ</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#55a69a"/></marker>
+    <style>
+      .bg{fill:#f5f8f8}.title{font:700 23px 'Segoe UI',Arial,sans-serif;fill:#16323f}.sub{font:13px 'Segoe UI',Arial,sans-serif;fill:#72848a}
+      .box{fill:white;stroke:#dce8e8;stroke-width:1.5;rx:12}.head{fill:#143744}.head2{fill:#168e83}.table{font:700 14px 'Segoe UI',Arial,sans-serif;fill:#fff}.field{font:12px Consolas,monospace;fill:#45616a}.key{font-weight:700;fill:#167c73}.line{stroke:#55a69a;stroke-width:2.2;fill:none;marker-end:url(#arrow)}.rel{font:11px 'Segoe UI',Arial,sans-serif;fill:#4d7e7d}.legend{font:11px 'Segoe UI',Arial,sans-serif;fill:#71838b}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="740" rx="16"/>
+  <text class="title" x="46" y="46">Database Schema · Student Project Tracker</text>
+  <text class="sub" x="46" y="70">ความสัมพันธ์ระหว่างนักศึกษา โครงงาน อาจารย์ที่ปรึกษา และความก้าวหน้า</text>
+
+  <g transform="translate(50 130)"><rect class="box" width="290" height="230"/><path class="head2" d="M12 0h266a12 12 0 0 1 12 12v35H0V12A12 12 0 0 1 12 0z"/><text class="table" x="18" y="29">students</text><text class="field key" x="18" y="76">PK  id</text><text class="field" x="18" y="103">student_no  TEXT UNIQUE</text><text class="field" x="18" y="130">name  TEXT NOT NULL</text><text class="field" x="18" y="157">email  TEXT UNIQUE</text><text class="field" x="18" y="184">program  TEXT</text><text class="field" x="18" y="211">year_level  INTEGER</text></g>
+
+  <g transform="translate(455 130)"><rect class="box" width="290" height="205"/><path class="head2" d="M12 0h266a12 12 0 0 1 12 12v35H0V12A12 12 0 0 1 12 0z"/><text class="table" x="18" y="29">project_members</text><text class="field key" x="18" y="76">PK, FK  project_id</text><text class="field key" x="18" y="103">PK, FK  student_id</text><text class="field" x="18" y="130">role  TEXT</text><text class="field" x="18" y="157">joined_at  TEXT</text><text class="legend" x="18" y="184">Composite primary key prevents duplicates</text></g>
+
+  <g transform="translate(860 130)"><rect class="box" width="290" height="258"/><path class="head" d="M12 0h266a12 12 0 0 1 12 12v35H0V12A12 12 0 0 1 12 0z"/><text class="table" x="18" y="29">projects</text><text class="field key" x="18" y="76">PK  id</text><text class="field" x="18" y="103">code  TEXT UNIQUE</text><text class="field" x="18" y="130">title  TEXT NOT NULL</text><text class="field" x="18" y="157">description  TEXT</text><text class="field" x="18" y="184">status  TEXT CHECK</text><text class="field key" x="18" y="211">FK  advisor_id</text><text class="field" x="18" y="238">start_date, end_date, timestamps</text></g>
+
+  <g transform="translate(455 460)"><rect class="box" width="330" height="205"/><path class="head2" d="M12 0h306a12 12 0 0 1 12 12v35H0V12A12 12 0 0 1 12 0z"/><text class="table" x="18" y="29">progress_updates</text><text class="field key" x="18" y="76">PK  id</text><text class="field key" x="18" y="103">FK  project_id</text><text class="field" x="18" y="130">title, detail  TEXT</text><text class="field" x="18" y="157">percent_complete  INTEGER (0–100)</text><text class="field" x="18" y="184">recorded_at, created_by</text></g>
+
+  <g transform="translate(860 470)"><rect class="box" width="290" height="165"/><path class="head" d="M12 0h266a12 12 0 0 1 12 12v35H0V12A12 12 0 0 1 12 0z"/><text class="table" x="18" y="29">advisors</text><text class="field key" x="18" y="76">PK  id</text><text class="field" x="18" y="103">name  TEXT NOT NULL</text><text class="field" x="18" y="130">email UNIQUE, department</text></g>
+
+  <path class="line" d="M340 215H445"/><text class="rel" x="365" y="204">1 : N</text>
+  <path class="line" d="M745 228H850"/><text class="rel" x="780" y="216">N : 1</text>
+  <path class="line" d="M860 326H805Q795 326 795 336V550H785"/><text class="rel" x="799" y="432">1 : N</text>
+  <path class="line" d="M1005 470V403Q1005 393 995 393H1005V388"/><text class="rel" x="1020" y="430">1 : N</text>
+  <text class="legend" x="50" y="704">PK = Primary Key · FK = Foreign Key · All relationships use SQLite foreign-key constraints</text>
+</svg>
