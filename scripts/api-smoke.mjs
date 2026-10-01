@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:8000';
+const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:8765';
 const results = [];
 const testCode = `SMOKE-${Date.now().toString(36).toUpperCase()}`;
 let createdId;

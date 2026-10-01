@@ -4,7 +4,7 @@ import path from 'node:path';
 import { db, dbPath, projectRoot, projectById, projectDetails } from './db.js';
 
 const HOST = process.env.HOST || '127.0.0.1';
-const PORT = Number(process.env.PORT || 8000);
+const PORT = Number(process.env.PORT || 8765);
 const WEB_DIR = path.join(projectRoot, 'public');
 const VALID_STATUSES = new Set(['planning', 'in_progress', 'completed', 'on_hold']);
 const STATIC_FILES = new Map([

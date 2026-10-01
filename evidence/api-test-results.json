@@ -1,7 +1,7 @@
 {
   "application": "Student Project Tracker",
   "baseUrl": "http://127.0.0.1:8765",
-  "testedAt": "2026-10-01T07:18:13.750Z",
+  "testedAt": "2026-10-01T07:24:11.553Z",
   "summary": {
     "passed": 15,
     "total": 15,
@@ -170,15 +170,15 @@
       "passed": true,
       "response": {
         "id": 5,
-        "code": "SMOKE-MUP7CWCH",
+        "code": "SMOKE-MUP7KKFD",
         "title": "โครงงานทดสอบ API",
         "description": "ข้อมูลชั่วคราว",
         "status": "planning",
         "start_date": null,
         "end_date": null,
         "advisor_id": 1,
-        "created_at": "2026-10-01 07:18:13",
-        "updated_at": "2026-10-01 07:18:13",
+        "created_at": "2026-10-01 07:24:11",
+        "updated_at": "2026-10-01 07:24:11",
         "advisor_name": "อ.กมลชนก ใจดี",
         "member_count": 0,
         "progress": null,
@@ -195,15 +195,15 @@
       "passed": true,
       "response": {
         "id": 5,
-        "code": "SMOKE-MUP7CWCH",
+        "code": "SMOKE-MUP7KKFD",
         "title": "โครงงานทดสอบ API",
         "description": "ข้อมูลชั่วคราว",
         "status": "planning",
         "start_date": null,
         "end_date": null,
         "advisor_id": 1,
-        "created_at": "2026-10-01 07:18:13",
-        "updated_at": "2026-10-01 07:18:13",
+        "created_at": "2026-10-01 07:24:11",
+        "updated_at": "2026-10-01 07:24:11",
         "advisor_name": "อ.กมลชนก ใจดี",
         "member_count": 0,
         "progress": null,
@@ -237,7 +237,7 @@
         "title": "ผลทดสอบ API",
         "detail": "เพิ่มความก้าวหน้าชั่วคราว",
         "percent_complete": 20,
-        "recorded_at": "2026-10-01 07:18:13",
+        "recorded_at": "2026-10-01 07:24:11",
         "created_by": 1
       }
     },
@@ -256,7 +256,7 @@
             "title": "ผลทดสอบ API",
             "detail": "เพิ่มความก้าวหน้าชั่วคราว",
             "percent_complete": 20,
-            "recorded_at": "2026-10-01 07:18:13",
+            "recorded_at": "2026-10-01 07:24:11",
             "created_by": 1,
             "created_by_name": "กานต์ธีรา พูนผล"
           }
@@ -273,15 +273,15 @@
       "passed": true,
       "response": {
         "id": 5,
-        "code": "SMOKE-MUP7CWCH",
+        "code": "SMOKE-MUP7KKFD",
         "title": "โครงงานทดสอบ API (แก้ไข)",
         "description": "ยืนยันการแก้ไข",
         "status": "in_progress",
         "start_date": null,
         "end_date": null,
         "advisor_id": 1,
-        "created_at": "2026-10-01 07:18:13",
-        "updated_at": "2026-10-01 07:18:13",
+        "created_at": "2026-10-01 07:24:11",
+        "updated_at": "2026-10-01 07:24:11",
         "advisor_name": "อ.กมลชนก ใจดี",
         "member_count": 0,
         "progress": 20,
@@ -292,7 +292,7 @@
             "title": "ผลทดสอบ API",
             "detail": "เพิ่มความก้าวหน้าชั่วคราว",
             "percent_complete": 20,
-            "recorded_at": "2026-10-01 07:18:13",
+            "recorded_at": "2026-10-01 07:24:11",
             "created_by_name": "กานต์ธีรา พูนผล"
           }
         ]
