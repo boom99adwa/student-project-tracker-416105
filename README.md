@@ -84,7 +84,9 @@ npm start
 
 ## GitHub Repository
 
-ซอร์สโค้ดนี้จัดเป็น Git repository ในเครื่องและพร้อม push ไปยัง GitHub เมื่อกำหนดชื่อ repository และสิทธิ์การมองเห็นแล้ว จากนั้นให้นำ URL ของ repository จริงมาใส่ที่นี่ก่อนส่งงาน: `[GitHub repository URL]`
+Repository: [https://github.com/boom99adwa/student-project-tracker-416105](https://github.com/boom99adwa/student-project-tracker-416105)
+
+Repository นี้ตั้งเป็น Public เพื่อให้อาจารย์เปิดตรวจจากลิงก์ได้
 
 ## โครงสร้างไฟล์
 
